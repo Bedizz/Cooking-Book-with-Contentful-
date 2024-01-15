@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-
 import useContentful from './components/useContentful'
+import RecipeContainer from './components/RecipeContainer'
 
 const App =( ) =>  {
   
@@ -9,14 +9,17 @@ const App =( ) =>  {
   const { getRecipes } = useContentful();
 
   useEffect(() => {
-      getRecipes().then((response) => console.log(response))
-})
+      getRecipes().then((response) => setRecipes(response))
+      console.log(recipes)
+
+      
+},[])
   
 
   return (
     <>
       <div>
-
+          <RecipeContainer recipes={recipes}  />
       </div>
     </>
   )

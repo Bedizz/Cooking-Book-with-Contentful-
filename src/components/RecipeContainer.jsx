@@ -1,8 +1,12 @@
 import React, { useEffect,useState } from 'react'
+import RecipeCard from './RecipeCard'
 
 
 
-const RecipeContainer = () => {
+const RecipeContainer = ({recipes}) => {
+    
+
+    
   
     
         
@@ -10,7 +14,13 @@ const RecipeContainer = () => {
 
 
   return (
-    <div>sadad</div>
+    <div> 
+        <h1>Recipe Container</h1>
+        {recipes.map((recipe,index) => {
+        <RecipeCard key={index} recipe={recipe} /> })}
+    
+    
+    </div>
   )
 }
 
