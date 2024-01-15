@@ -14,14 +14,16 @@ const useContentful = () => {
         select: "fields",
       });
       
+      
       const sanitizedEntries = entries.items.map((item) => {
         const { title, description, image } = item.fields;
         // const  title = item.fields.title;
         // const description = item.fields.description;
         // const image = item.fields.image.fields.file.url;
-        return { title, description, image };
+        return{ ...item.fields ,  title, description, image };
       });
       return sanitizedEntries;
+      console.log(sanitizedEntries);
 
     } catch (error) {
       console.log("error fetching recipe", error);
