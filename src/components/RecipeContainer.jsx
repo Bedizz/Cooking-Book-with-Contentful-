@@ -1,8 +1,26 @@
-import React from 'react'
+import React, { useEffect,useState } from 'react'
+import RecipeCard from './RecipeCard'
 
-const RecipeContainer = () => {
+
+
+const RecipeContainer = ({recipes}) => {
+    
+
+    
+  
+    
+        
+
+
+
   return (
-    <div>RecipeContainer</div>
+    <div> 
+        <h1>Recipe Container</h1>
+        {recipes.map((recipe,index) => {
+        <RecipeCard key={index} recipe={recipe} /> })}
+    
+    
+    </div>
   )
 }
 
