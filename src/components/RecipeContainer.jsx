@@ -16,9 +16,10 @@ const RecipeContainer = ({recipes}) => {
   return (
     <div> 
         <h1>Recipe Container</h1>
-        {recipes.map((recipe,index) => {
+        <RecipeCard />
+        {/* {recipes.map((recipe,index) => {
         <RecipeCard key={index} recipe={recipe} /> })}
-    
+     */}
     
     </div>
   )
