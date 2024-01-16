@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import useContentful from './components/useContentful'
 import NavBar from './components/Navbar'
+import Recipe from './components/Recipe'
 
 const App =( ) =>  {
   
@@ -16,7 +17,7 @@ const App =( ) =>  {
 
   useEffect(() => {
       getRecipes().then((response) => setRecipes(response))
-      console.log(recipes)
+      
 
       
 },[])
@@ -26,6 +27,7 @@ const App =( ) =>  {
     <>
       <div>
       <NavBar />
+      <Recipe/>
       </div>
       <div>
       </div>
