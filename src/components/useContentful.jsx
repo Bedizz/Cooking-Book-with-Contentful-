@@ -13,7 +13,7 @@ const useContentful = () => {
         content_type: "recipe",
         select: "fields",
       });
-      
+      console.log(entries);
       
       const sanitizedEntries = entries.items.map((item) => {
         const { title, description, image } = item.fields;
