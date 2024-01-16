@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import { createClient } from "contentful";
+import NavBar from '../components/Navbar'
 
 const Recipe = () => {
 
@@ -14,8 +15,7 @@ const Recipe = () => {
       const getRecipe = async () => {
         try {
           const entry = await client.getEntry({
-            content_type: "recipe",
-            select: "fields",
+            
           });
         } catch (error) {
             console.log("error fetching recipe", error);
@@ -25,6 +25,7 @@ const Recipe = () => {
 
   return (
     <>
+    <NavBar/>
     <div className='recipe-card-container'>
         <div className='recipe-card'>
             <div className='title-container'>
