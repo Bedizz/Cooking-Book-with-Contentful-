@@ -1,6 +1,7 @@
 import { createClient } from "contentful";
+import { useState } from "react";
 
-const useContentful = () => {
+const useContentful = () => { 
   const client = createClient({
     space: "t5tajbphcq3f",
     accessToken: "grVsAtXgxfiTIbYGD6uWZhMQ-e0j3acf0eQZOx0hQNM",
@@ -12,7 +13,7 @@ const useContentful = () => {
       const entries = await client.getEntries({
         content_type: "recipe",
         select: "fields",
-      });
+      }); 
       console.log(entries);
       
       const sanitizedEntries = entries.items.map((item) => {
