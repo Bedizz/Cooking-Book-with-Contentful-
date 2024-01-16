@@ -1,6 +1,27 @@
-import React from 'react'
+import React, {useState} from 'react'
+import { createClient } from "contentful";
 
-const RecipeCard = () => {
+const Recipe = () => {
+
+    const [recipe, setRecipe] = useState([])
+    const client = createClient({
+        space: "t5tajbphcq3f", /* "t5tajbphcq3f", */ 
+        accessToken: "grVsAtXgxfiTIbYGD6uWZhMQ-e0j3acf0eQZOx0hQNM", /* "grVsAtXgxfiTIbYGD6uWZhMQ-e0j3acf0eQZOx0hQNM", */
+        host: "cdn.contentful.com"
+      });
+     
+    
+      const getRecipe = async () => {
+        try {
+          const entry = await client.getEntry({
+            content_type: "recipe",
+            select: "fields",
+          });
+        } catch (error) {
+            console.log("error fetching recipe", error);
+            }
+        }
+    
 
   return (
     <>
@@ -44,4 +65,4 @@ const RecipeCard = () => {
   )
 }
 
-export default RecipeCard
+export default Recipe

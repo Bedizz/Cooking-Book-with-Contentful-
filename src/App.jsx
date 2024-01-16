@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import useContentful from './components/useContentful'
-import RecipeContainer from './components/RecipeContainer'
+import { NavLink,Routes,Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
 
 const App =( ) =>  {
   
@@ -18,9 +19,17 @@ const App =( ) =>  {
 
   return (
     <>
-      <div>
-          <RecipeContainer recipes={recipes}  />
-      </div>
+    <div className='cooking-book'>
+      <Navbar/>
+      {/* <nav>
+        <NavLink to="/" >HomePage</NavLink>
+        <NavLink to="/recipes" >Recipes</NavLink>
+      </nav>
+      <Routes>
+        <Route path="/" element={<useContentful />} />
+        <Route path="/recipes" element={<Recipe  />} />
+      </Routes> */}
+    </div>
     </>
   )
 }
