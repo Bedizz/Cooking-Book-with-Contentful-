@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import useContentful from './components/useContentful'
-import RecipeContainer from './components/RecipeContainer'
-import NavBar from './components/NavBar'
+import NavBar from './components/Navbar'
 
 const App =( ) =>  {
   
@@ -29,7 +28,6 @@ const App =( ) =>  {
       <NavBar />
       </div>
       <div>
-          <RecipeContainer recipes={recipes}  />
       </div>
     </>
   )
