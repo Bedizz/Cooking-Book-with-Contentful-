@@ -1,38 +1,35 @@
-import { useState, useEffect } from 'react'
-import './App.css'
-import useContentful from './components/useContentful'
-import RecipeContainer from './components/RecipeContainer'
-import NavBar from './components/NavBar'
+import { useState, useEffect } from "react";
+import "./App.css";
+import { NavLink, Routes, Route } from "react-router-dom";
+import useContentful from "./components/useContentful";
+import NavBar from "./components/Navbar";
+import Recipe from "./Pages/Recipe";
+import HomePage from "./Pages/HomePage";
 
-const App =( ) =>  {
+const App = () => {
+  const { recipes,getRecipes } = useContentful();
   
-  const [recipes, setRecipes] = useState([])
-  const { getRecipes } = useContentful();
 
-  const accessToken = 'your_access_token_here';
+  const accessToken = "your_access_token_here";
 
   // Pass the access token as an argument
   const contentfulData = useContentful(accessToken);
-
+  console.log(recipes)
 
   useEffect(() => {
-      getRecipes().then((response) => setRecipes(response))
-      console.log(recipes)
-
-      
-},[])
-  
+    getRecipes();
+  }, []);
 
   return (
-    <>
-      <div>
+    <div>
       <NavBar />
-      </div>
-      <div>
-          <RecipeContainer recipes={recipes}  />
-      </div>
-    </>
-  )
-}
+    
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/recipe/:id" element={<Recipe />} />
+    </Routes>
+    </div>
+  );
+};
 
-export default App
+export default App;

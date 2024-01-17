@@ -1,24 +1,26 @@
-import React from 'react'
+import React, {useState} from 'react'
+import { createClient } from "contentful";
+import NavBar from '../components/Navbar'
+import { useParams } from 'react-router-dom'
 
-const RecipeCard = () => {
+const Recipe = () => {
+
+// const {id} = useParams()
+    
 
   return (
     <>
+    <NavBar/>
     <div className='recipe-card-container'>
         <div className='recipe-card'>
             <div className='title-container'>
                 <h1>Juicy Roasted Chicken</h1>
             </div>
-            <div>
+            
+            <div className='img-container'>
                 <img src="public\Recipe Images\juicy-roast-chicken.jpg" alt='recipe' />
-            </div>
-            <div className='info-container'>
-                <p>Prep Time: 10 minutes</p>
-                <p>Cook Time: 1 hour</p>
-                <p>Serves: 4</p>
-            </div>
-            <div className='ing-container'>
-                <p>Ingredients:</p>
+                <div className='ing-container'>
+                <h1>Ingredients</h1>
                 <ul>
                     <li>1 whole chicken</li>
                     <li>1/2 cup butter</li>
@@ -30,8 +32,17 @@ const RecipeCard = () => {
                     <li>1 onion</li>
                     <li>1/2 cup chicken broth</li>
                 </ul>
+                </div>
             </div>
-            <div>
+            <hr />
+            <div className='fast-info'>
+                <p><strong>Prep Time:</strong> 10 minutes</p>
+                <p><strong>Cook Time:</strong> 1 hour</p>
+                <p><strong>Serves:</strong> 4</p>
+            
+            </div>
+            
+            <div className='description'>
                 <h4>Description</h4>
                 <p>Preheat the oven to 350 degrees F (175 degrees C).
                     Place chicken in a roasting pan; season generously inside and out with onion powder, salt, and pepper. Place 3 tablespoons of butter in chicken cavity; arrange dollops of remaining butter on the outside of chicken. Cut celery into 3 or 4 pieces; place in the chicken cavity. Bake chicken uncovered in the preheated oven until no longer pink at the bone and the juices run clear, about 1 hour and 15 minutes. An instant-read thermometer inserted into the thickest part of the thigh, near the bone, should read 165 degrees F (74 degrees C). Remove from the oven and baste with drippings. Cover with aluminum foil and allow to rest for about 30 minutes before serving.</p>
@@ -44,4 +55,4 @@ const RecipeCard = () => {
   )
 }
 
-export default RecipeCard
+export default Recipe
