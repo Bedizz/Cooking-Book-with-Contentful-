@@ -10,11 +10,12 @@ const {id} = useParams()
 
   return (
     <>
-    <NavBar/>
+    
     <div className='recipe-card-container'>
         <div className='recipe-card'>
             <div className='title-container'>
                 <h1>Juicy Roasted Chicken</h1>
+                <button lassName='PN-buttons'>Previous</button><button className='PN-buttons'>Next</button>
                 <p>{id}</p>
             </div>
             
