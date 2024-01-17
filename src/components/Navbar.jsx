@@ -6,17 +6,15 @@ const NavBar = () => {
         <nav>
   <ul>
     <li>
-      <a href="#">Home</a>
+      <a href="">Home</a>
     </li>
     <li>
-      <a href="#">Recipes</a>
+      <img src="public\Recipe Images\cook-book-logo-3-removebg-preview.png" alt="cook-book" />
     </li>
     <li>
-      <a href="#">Services</a>
+      <a href="/recipes">Recipes</a>
     </li>
-    <li>
-      <a href="#">Contact</a>
-    </li>
+    
   </ul>
 </nav>
     )
