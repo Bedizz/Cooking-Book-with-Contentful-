@@ -1,15 +1,10 @@
 import React from 'react'
-import UseContentful from '../components/useContentful'
-import NavBar from '../components/Navbar'
+import "./HomePage.css"
 
 const HomePage = ({ recipes }) => {
   return (
-    <div>
-      {recipes.map((recipe, index) => (
-        <div key={index}>
-          <p>{recipe.description}</p>
-        </div>
-      ))}      
+       
+    <div>      
     </div>
   )
 }
