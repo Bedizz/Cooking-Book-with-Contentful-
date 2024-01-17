@@ -3,9 +3,9 @@ import { createClient } from "contentful";
 import NavBar from '../components/Navbar'
 import { useParams } from 'react-router-dom'
 
-const Recipe = () => {
+const Recipe = (props) => {
 
-// const {id} = useParams()
+const {id} = useParams()
     
 
   return (
@@ -15,6 +15,7 @@ const Recipe = () => {
         <div className='recipe-card'>
             <div className='title-container'>
                 <h1>Juicy Roasted Chicken</h1>
+                <p>{id}</p>
             </div>
             
             <div className='img-container'>
