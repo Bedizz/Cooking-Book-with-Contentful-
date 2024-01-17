@@ -26,7 +26,6 @@ const App = () => {
   return (
     <div>
       <NavBar />
-    
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/recipe/:id" element={<Recipe />} />
