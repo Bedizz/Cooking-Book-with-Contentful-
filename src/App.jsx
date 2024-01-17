@@ -5,16 +5,16 @@ import useContentful from "./components/useContentful";
 import NavBar from "./components/Navbar";
 import Recipe from "./Pages/Recipe";
 import HomePage from "./Pages/HomePage";
-import Recipes from "./components/Recipes";
+import Recipes from "./Pages/Recipes";
+
 
 const App = () => {
   const { recipes, getRecipes } = useContentful();
   const { id } = useParams();
 
-  const accessToken = "your_access_token_here";
+  
 
-  // Pass the access token as an argument
-  const contentfulData = useContentful(accessToken);
+ 
   console.log(recipes);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ const App = () => {
       <NavBar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/recipes" element={<Recipes/>} />
+        <Route path="/recipes" element={<Recipes recipes={recipes} />} />
         <Route path="/recipes/:id" element={<Recipe />} />
       </Routes>
     </div>
