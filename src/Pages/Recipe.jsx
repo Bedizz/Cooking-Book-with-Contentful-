@@ -1,6 +1,4 @@
-import React, {useState} from 'react'
-import { createClient } from "contentful";
-import NavBar from '../components/Navbar'
+import React from 'react'
 import { useParams } from 'react-router-dom'
 
 const Recipe = ({ recipes }) => {
@@ -20,9 +18,10 @@ export default Recipe
 /* const Recipe = (props) => {
 
 const {id} = useParams()
+const recipe = props.recipes.find((recipe) => recipe.sys.id === id)
     
-
-return (
+if (!recipe) return <h2>Recipe not found</h2>
+  return (
     <>
     
     <div className='recipe-card-container'>
