@@ -7,23 +7,28 @@ import Recipe from "./Pages/Recipe";
 import HomePage from "./Pages/HomePage";
 
 const App = () => {
-  const [recipes, setRecipes] = useState([]);
-  const { getRecipes } = useContentful();
+  const { recipes,getRecipes } = useContentful();
+  
 
   const accessToken = "your_access_token_here";
 
   // Pass the access token as an argument
   const contentfulData = useContentful(accessToken);
+  console.log(recipes)
 
   useEffect(() => {
-    getRecipes().then((response) => setRecipes(response));
+    getRecipes();
   }, []);
 
   return (
+    <div>
+      <NavBar />
+    
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="/recipe" element={<Recipe />} />
+      <Route path="/recipe/:id" element={<Recipe />} />
     </Routes>
+    </div>
   );
 };
 

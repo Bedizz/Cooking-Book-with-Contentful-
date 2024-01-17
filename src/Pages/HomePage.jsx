@@ -7,7 +7,7 @@ const HomePage = () => {
        
     <div>
         <NavBar/>
-        <UseContentful/>
+        
     </div>
   )
 }

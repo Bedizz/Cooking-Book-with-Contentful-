@@ -4,8 +4,8 @@ import { useState } from "react";
 const useContentful = () => { 
   const [recipes, setRecipes] = useState([]);
   const client = createClient({
-    space: "t5tajbphcq3f", 
-    accessToken:  "grVsAtXgxfiTIbYGD6uWZhMQ-e0j3acf0eQZOx0hQNM", 
+    space: import.meta.env.VITE_REACT_CONTENTFUL_SPACE, 
+    accessToken:  import.meta.env.VITE_REACT_CONTENTFUL_ACCESSTOKEN, 
     host: "cdn.contentful.com"
   });
  
@@ -16,15 +16,16 @@ const useContentful = () => {
         content_type: "recipe",
         select: "fields",
       }); 
-      setRecipes(entries);
-      console.log(entries);
+      setRecipes(entries.items);
+      // console.log(entries);
     
     } catch (error) {
       console.log("error fetching recipe", error);
     }
 };
 
-  return { getRecipes };
+  return { getRecipes,recipes }
+  ;
 };
 
 export default useContentful;
