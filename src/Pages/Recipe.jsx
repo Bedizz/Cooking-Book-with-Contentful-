@@ -3,7 +3,21 @@ import { createClient } from "contentful";
 import NavBar from '../components/Navbar'
 import { useParams } from 'react-router-dom'
 
-const Recipe = (props) => {
+const Recipe = ({ recipes }) => {
+        return (
+        <div>
+            {recipes.map((recipe, index) => (
+            <div key={index}>
+                <p>{recipe.description}</p>
+            </div>
+            ))}      
+        </div>
+        )
+    }
+
+export default Recipe
+
+/* const Recipe = (props) => {
 
 const {id} = useParams()
     
@@ -56,5 +70,4 @@ const {id} = useParams()
     </>
   )
 }
-
-export default Recipe
+ */

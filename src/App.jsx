@@ -9,25 +9,18 @@ import HomePage from "./Pages/HomePage";
 
 
 const App = () => {
-  const { recipes,getRecipes } = useContentful();
-  const {id} = useParams()
-   
-
-  const accessToken = "your_access_token_here";
-
-  // Pass the access token as an argument
-  const contentfulData = useContentful(accessToken);
+  const { recipes, getRecipes } = useContentful();
   console.log(recipes)
 
   useEffect(() => {
     getRecipes();
-  }, [id]);
+  }, []);
 
   return (
     <div>
       <NavBar />
     <Routes>
-      <Route path="/" element={<HomePage />} />
+      <Route path="/" element={ recipes.length > 0 ? <HomePage recipes={recipes} /> : <p>Loading...</p>} />
       <Route path="/recipe/:id" element={<Recipe />} />
     </Routes>
     </div>
