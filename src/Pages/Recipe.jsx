@@ -22,7 +22,7 @@ export default Recipe
 const {id} = useParams()
     
 
-  return (
+return (
     <>
     
     <div className='recipe-card-container'>
@@ -68,6 +68,6 @@ const {id} = useParams()
 
     </div>
     </>
-  )
+)
 }
  */
