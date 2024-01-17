@@ -1,13 +1,13 @@
 import React from "react";
 import "../App.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
     <nav>
       <ul>
         <li>
-          <NavLink path="/">HomePage</NavLink>
+          <NavLink to="/">HomePage</NavLink>
         </li>
         <li>
           <img
@@ -16,7 +16,7 @@ const NavBar = () => {
           />
         </li>
         <li>
-          <NavLink path="/recipes">Recipes</NavLink>
+          <NavLink to="/recipes">Recipes</NavLink>
         </li>
       </ul>
     </nav>

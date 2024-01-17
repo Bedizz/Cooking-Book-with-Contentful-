@@ -5,6 +5,7 @@ import useContentful from "./components/useContentful";
 import NavBar from "./components/Navbar";
 import Recipe from "./Pages/Recipe";
 import HomePage from "./Pages/HomePage";
+import Recipes from "./components/Recipes";
 
 const App = () => {
   const { recipes, getRecipes } = useContentful();
@@ -25,7 +26,8 @@ const App = () => {
       <NavBar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/recipe/:id" element={<Recipe />} />
+        <Route path="/recipes" element={<Recipes/>} />
+        <Route path="/recipes/:id" element={<Recipe />} />
       </Routes>
     </div>
   );
