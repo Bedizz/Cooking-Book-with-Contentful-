@@ -1,14 +1,17 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import { NavLink, Routes, Route } from "react-router-dom";
+import { NavLink, Routes, Route,useParams } from "react-router-dom";
 import useContentful from "./components/useContentful";
 import NavBar from "./components/Navbar";
 import Recipe from "./Pages/Recipe";
 import HomePage from "./Pages/HomePage";
 
+
+
 const App = () => {
   const { recipes,getRecipes } = useContentful();
-  
+  const {id} = useParams()
+   
 
   const accessToken = "your_access_token_here";
 
@@ -18,7 +21,7 @@ const App = () => {
 
   useEffect(() => {
     getRecipes();
-  }, []);
+  }, [id]);
 
   return (
     <div>
