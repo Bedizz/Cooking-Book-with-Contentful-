@@ -19,7 +19,7 @@ const App = () => {
 
   useEffect(() => {
     getRecipes();
-  }, [id]);
+  }, []);
 
   return (
     <div>

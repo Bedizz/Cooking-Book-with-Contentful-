@@ -1,0 +1,61 @@
+/*  Rules for the Recipes.jsx component */
+.recipe-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+  
+.recipes-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.recipe-item {
+    flex: 0 0 45%; /* This will make the items take up approximately half of the container's width, allowing for two items per row */
+    margin-bottom: 20px; /* Add some space between rows */
+    list-style: none; /* This will remove the bullet point */
+    border: 1px solid #000; /* This will add a border around each item */
+    transition: background-color 0.3s ease; /* This will animate the background color change */
+    
+}
+
+.header-container {
+
+    width: 100%;
+}
+
+.recipe-item h3 {
+    margin: 10px;
+    display: inline-block;
+    width: 100%;
+}
+
+.recipe-item:hover {
+    background-color: rgba(255, 255, 255, 0.7); /* This will make the background color semi-transparent white on hover */
+}
+.recipe-item a {
+    display: block;
+    text-decoration: none; /* This will remove the underline */
+    color: inherit; /* This will make the link have the same color as the surrounding text */
+}
+.recipe-item h3, .recipe-item img {
+    margin: 10px; /* This will add some space around the h3 and img elements */
+    
+}
+.recipe-image {
+    width: 95%;
+    max-height: 200px; 
+    object-fit: cover; 
+}
+@media (max-width: 500px) {
+    .recipes-list {
+    flex-direction: column;
+    }
+    .recipe-item {
+      flex: 0 0 100%; /* This will make the items take up the full width of the container */
+    }
+}

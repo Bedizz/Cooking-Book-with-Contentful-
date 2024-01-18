@@ -12,7 +12,7 @@ const useContentful = () => {
 
   const getRecipes = async () => {
     try {
-      const entries = await client.getEntries({
+      const entries = await client.getEntries({ 
         content_type: "recipe",
         select: "fields",
       }); 
@@ -25,7 +25,7 @@ const useContentful = () => {
     }
 };
 
-  return { getRecipes,recipes }
+  return { getRecipes, recipes } //
   ;
 };
 
