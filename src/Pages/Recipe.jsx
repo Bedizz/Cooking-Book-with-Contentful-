@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { useParams } from 'react-router-dom'
 import '../App.css'
 
-
+const Recipe = ({recipes}) => {
 
 const {id} = useParams()
 
@@ -12,7 +12,6 @@ console.log(singleRecipe)
 
 
 
-    
 
 
 
