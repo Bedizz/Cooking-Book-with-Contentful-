@@ -22,6 +22,7 @@ const useContentful = () => {
     
     } catch (error) {
       console.log("error fetching recipe", error);
+      
     }
 };
 

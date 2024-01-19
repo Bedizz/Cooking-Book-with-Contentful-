@@ -9,8 +9,6 @@ import Recipes from "./Pages/Recipes";
 import Footer from './Pages/Footer';
 import styles from './Pages/HomePage.module.css'; 
 
-
-
 const App = () => {
   const { recipes, getRecipes } = useContentful();
   const { id } = useParams();

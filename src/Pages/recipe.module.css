@@ -17,7 +17,8 @@
     }
 }
 
-.image-container {
+.image-container,
+.title {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -32,25 +33,38 @@
 
 .title {
     margin: 10px;
-    display: inline-block;
-    width: 100%;
     padding: 20px;
 }
 
 .recipe-item {
-    list-style: none; /* This will remove the bullet point */
-    border: 1px solid #000; /* This will add a border around each item */
-    transition: background-color 0.3s ease; /* This will animate the background color change */
+    list-style: none;
+    border: 1px solid #000; 
+    transition: background-color 0.3s ease; 
     border-radius: 8px;
 }
 
 .recipe-item:hover {
-    background-image: linear-gradient(to right top, rgba(142, 68, 173, 0.7) 0%, rgba(52, 152, 219, 0.7) 100%);
+    background-image: white;
 }
-
 
 .description,
 .ingredients,
-.instructions {
+.instructions,
+.toggle {
     padding: 10px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.toggle {
+    cursor: pointer;
+    border: 1px solid #000;
+    margin: 10px 0;
+    transition: background-color 0.3s ease, font-weight 0.3s ease;
+}
+
+.toggle:hover {
+    background-image: linear-gradient(to right top, rgba(142, 68, 173, 0.7) 0%, rgba(52, 152, 219, 0.7) 100%);
+    font-weight: bold;
 }
