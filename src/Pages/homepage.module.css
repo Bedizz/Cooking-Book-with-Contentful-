@@ -1,0 +1,75 @@
+header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+body {
+  margin-bottom: 50px;
+}
+
+.cuisineSection {
+  margin: 20px;
+  padding: 20px;
+  padding-bottom: 40px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+  border: 1px solid black;
+
+}
+
+.cuisineSection h2 {
+  color: #333;
+}
+
+.cuisineSection p {
+  color: #666;
+}
+
+.imageContainer {
+  display: flex; /* Display images in a row */
+  flex-wrap: wrap; /* Allow images to wrap to the next line */
+  justify-content: space-between; 
+}
+
+.imageContainer img {
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  margin-top: auto;
+}
+
+/* For screens 854px and up */
+@media (max-width: 854px) {
+  .imageContainer {
+    justify-content: space-around;
+  }
+
+  .imageContainer img {
+    margin: 10px; /* Add some padding between images */
+  }
+  
+}
+
+/* For screens 555px and up */
+@media (max-width: 555px) {
+  .imageContainer {
+    justify-content: center;
+  }
+
+  .imageContainer img {
+    margin: 10px; /* Add some padding between images */
+  }
+}
