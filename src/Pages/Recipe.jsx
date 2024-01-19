@@ -1,15 +1,27 @@
 import React, {useState} from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Navigate, useNavigate } from 'react-router-dom'
 import styles from './Recipe.module.css'
 
+
 const Recipe = ({recipes}) => {
+  
 
 const {id} = useParams()
-
 const singleRecipe = recipes.find((recipe) => recipe.sys.id === id)
-console.log(singleRecipe)
+
+const navigate = useNavigate()
+
+function handleClick() {
+  navigate('/')
+}
+
+
 
 return (
+  <>
+  <button onClick={handleClick} >Back to Home 
+  </button>
+  <button></button>
     <div className={styles.container}>
       <h2 className={styles.title}>{singleRecipe.fields.title}</h2>
       <div className={styles['recipe-item']}>
@@ -19,6 +31,7 @@ return (
       <p className={styles.ingredients}>{singleRecipe.fields.ingredients}</p>
       <p className={styles.instructions}>{singleRecipe.fields.instructions}</p>
     </div>
+    </>
   )
 } ;
 export default Recipe

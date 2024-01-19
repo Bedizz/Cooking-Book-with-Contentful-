@@ -2,9 +2,11 @@ import React from "react";
 import "../App.css";
 import { NavLink, Link } from "react-router-dom";
 import styles from "./navbar.module.css";
+import BreadCrumbs from "./BreadCrumbs";
 
 const NavBar = () => {
   return (
+    <>
     <nav className={styles.navbar}>
       <ul>
         <li>
@@ -21,6 +23,9 @@ const NavBar = () => {
         </li>
       </ul>
     </nav>
+    <BreadCrumbs />
+    
+    </>
   );
 };
 

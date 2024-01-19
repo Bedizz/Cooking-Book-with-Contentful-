@@ -7,7 +7,7 @@ import "./Recipes.css"
 
 const Recipes = ({recipes}) => {
 
-  console.log(recipes)
+  
 
     return (
       <div className='recipe-container'>
