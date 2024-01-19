@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import Footer from './Footer'
-
+import Footer from './Footer';
 import "./Recipes.css"
 
 
@@ -27,7 +26,7 @@ const Recipes = ({recipes}) => {
                   </li>
                 ))}
           </ul>
-          <Footer footerText="With love from Turkey and Colombia to the world" />
+          <Footer footerText={'With love from Turkey and Colombia'}/>
       </div>
     );
   };

@@ -46,7 +46,7 @@ const HomePage = () => {
     <div className={styles.homePage}>
       <Header />
       <Body />
-      <Footer />
+      <Footer footerText={"Explore more recipes in our cookbook and bring the flavors of Turkey and Spain to your kitchen!"}/>
     </div>
   )
 }
