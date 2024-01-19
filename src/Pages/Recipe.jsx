@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import styles from "./Recipe.module.css";
 import Footer from "./Footer";
 
@@ -9,6 +9,16 @@ const Recipe = ({ recipes }) => {
 
   const [showIngredients, setShowIngredients] = useState(false);
   const [showInstructions, setShowInstructions] = useState(false);
+
+  const navigate = useNavigate()
+
+  function handleClick() {
+    navigate('/')
+  }
+  function handleBack () {
+    navigate(-1)
+  }
+
 
   return (
     <>
