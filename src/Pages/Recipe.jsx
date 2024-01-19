@@ -14,14 +14,17 @@ const navigate = useNavigate()
 function handleClick() {
   navigate('/')
 }
+function handleBack () {
+  navigate(-1)
+}
+
+
 
 
 
 return (
   <>
-  <button onClick={handleClick} >Back to Home 
-  </button>
-  <button></button>
+  
     <div className={styles.container}>
       <h2 className={styles.title}>{singleRecipe.fields.title}</h2>
       <div className={styles['recipe-item']}>
@@ -31,6 +34,12 @@ return (
       <p className={styles.ingredients}>{singleRecipe.fields.ingredients}</p>
       <p className={styles.instructions}>{singleRecipe.fields.instructions}</p>
     </div>
+  <div className='handleButtons'> 
+  <button onClick={handleClick} >Back to Home 
+  </button>
+  <button onClick={handleBack} >Back to Recipes
+  </button>
+  </div>
     </>
   )
 } ;
