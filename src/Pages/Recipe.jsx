@@ -1,4 +1,3 @@
-// Recipe.js
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styles from './Recipe.module.css';
