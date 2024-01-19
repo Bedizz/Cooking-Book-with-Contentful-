@@ -1,0 +1,56 @@
+/* Recipe.module.css */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    margin: 0 auto; 
+    padding: 0;
+    text-align: center;
+    width: 100%; 
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        width: 50%;
+    }
+}
+
+.image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.recipe-image {
+    width: 80%; 
+    height: auto;
+    padding: 20px 0;
+}
+
+.title {
+    margin: 10px;
+    display: inline-block;
+    width: 100%;
+    padding: 20px;
+}
+
+.recipe-item {
+    list-style: none; /* This will remove the bullet point */
+    border: 1px solid #000; /* This will add a border around each item */
+    transition: background-color 0.3s ease; /* This will animate the background color change */
+    border-radius: 8px;
+}
+
+.recipe-item:hover {
+    background-image: linear-gradient(to right top, rgba(142, 68, 173, 0.7) 0%, rgba(52, 152, 219, 0.7) 100%);
+}
+
+
+.description,
+.ingredients,
+.instructions {
+    padding: 10px;
+}
