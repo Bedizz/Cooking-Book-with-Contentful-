@@ -26,7 +26,6 @@ const Recipes = ({recipes}) => {
                   </li>
                 ))}
           </ul>
-          <Footer footerText={'With love from Turkey and Colombia'}/>
       </div>
     );
   };
