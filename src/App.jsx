@@ -12,11 +12,6 @@ const App = () => {
   const { recipes, getRecipes } = useContentful();
   const { id } = useParams();
 
-  
-
- 
-  
-
   useEffect(() => {
     getRecipes();
   }, []);
@@ -29,6 +24,7 @@ const App = () => {
         <Route path="/recipes" element={<Recipes recipes={recipes} />} />
         <Route path="/recipes/:id" element={<Recipe recipes={recipes} />} />
       </Routes>
+      
     </div>
   );
 };
