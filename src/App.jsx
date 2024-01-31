@@ -9,6 +9,7 @@ import Recipes from "./Pages/Recipes";
 import Footer from './Pages/Footer';
 import styles from './Pages/HomePage.module.css'; 
 
+
 const App = () => {
   const { recipes, getRecipes } = useContentful();
   const { id } = useParams();
@@ -20,6 +21,7 @@ const App = () => {
   return (
     <div>
       <NavBar />
+      
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/recipes" element={<Recipes recipes={recipes} />} />

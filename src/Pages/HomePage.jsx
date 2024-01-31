@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from "./HomePage.module.css"
 import Footer from './Footer';
+import SearchBar from '../components/SearchBar';
 
 const Header = () => (
   <header>
