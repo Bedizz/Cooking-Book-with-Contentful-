@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Footer from './Footer';
 import "./Recipes.css"
+import SearchBar from '../components/SearchBar';
 
 const Recipes = ({recipes}) => {
 
@@ -10,6 +11,7 @@ const Recipes = ({recipes}) => {
     return (
       <div className='recipe-container'>
         <h2>List of Recipes</h2>
+        <SearchBar />
         
           <ul className='recipes-list'>
               {recipes &&

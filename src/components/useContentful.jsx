@@ -8,7 +8,7 @@ const useContentful = () => {
     accessToken:  import.meta.env.VITE_REACT_CONTENTFUL_ACCESSTOKEN, 
     host: "cdn.contentful.com"
   });
- const [isLoading, setIsLoading] = useState(false);
+ const [isLoading, setIsLoading] = useState(true);
 
   const getRecipes = async () => {
     try {
@@ -16,7 +16,7 @@ const useContentful = () => {
         content_type: "recipe",
         select: "fields",
       }); 
-      setIsLoading(true);
+      setIsLoading(false);
       setRecipes(entries.items);
       // console.log(entries);
     
