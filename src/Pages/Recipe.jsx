@@ -5,7 +5,8 @@ import Footer from "./Footer";
 
 const Recipe = ({ recipes }) => {
   const { id } = useParams();
-  const singleRecipe = recipes.find((recipe) => recipe.sys.id === id);
+  const singleRecipe = recipes.find((recipe) => recipe.sys.id === id); // sys es un objeto que contiene el id de cada receta se obtiene de contentful
+  // recipe.sys es un objeto que contiene el id de cada receta se obtiene de contentful. Al concatenar 
 
   const [showIngredients, setShowIngredients] = useState(false);
   const [showInstructions, setShowInstructions] = useState(false);
@@ -19,6 +20,9 @@ const Recipe = ({ recipes }) => {
     navigate(-1)
   }
 
+ if (!singleRecipe) {
+    return <div>Loading...</div>
+  } 
 
   return (
     <>
