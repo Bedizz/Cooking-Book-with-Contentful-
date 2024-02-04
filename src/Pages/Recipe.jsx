@@ -3,9 +3,15 @@ import { useParams, useNavigate } from "react-router-dom";
 import styles from "./Recipe.module.css";
 import Footer from "./Footer";
 
-const Recipe = ({ recipes }) => {
+const Recipe = ({ data }) => {
   const { id } = useParams();
-  const singleRecipe = recipes.find((recipe) => recipe.sys.id === id);
+  // const singleRecipe = data.find((recipe) => recipe.id === id);
+  const singleRecipe = data.find((recipe) => {
+    console.log(recipe.id)
+    console.log("id", id)
+    return recipe.title === id
+  });
+
 
   const [showIngredients, setShowIngredients] = useState(false);
   const [showInstructions, setShowInstructions] = useState(false);
@@ -24,15 +30,15 @@ const Recipe = ({ recipes }) => {
       {singleRecipe && (
         <>
           <div className={styles.container}>
-            <h2 className={styles.title}>{singleRecipe.fields.title}</h2>
+            <h2 className={styles.title}>{singleRecipe.title}</h2>
             <div className={styles["recipe-item"]}>
               <img
                 className={styles["recipe-image"]}
-                src={singleRecipe.fields.image.fields.file.url}
-                alt={singleRecipe.fields.title}
+                src={singleRecipe.image}
+                alt={singleRecipe.title}
               />
               <p className={styles.description}>
-                {singleRecipe.fields.description}
+                {singleRecipe.description}
               </p>
             </div>
           </div>
@@ -46,7 +52,7 @@ const Recipe = ({ recipes }) => {
             </div>
             {showIngredients && (
               <div className={styles.ingredients}>
-                {singleRecipe.fields.ingredients.map((ingredient, index) => (
+                {singleRecipe.ingredients.map((ingredient, index) => (
                   <p key={index}>{ingredient}</p>
                 ))}
               </div>
@@ -59,7 +65,7 @@ const Recipe = ({ recipes }) => {
             </div>
             {showInstructions && (
               <div className={styles.instructions}>
-                {singleRecipe.fields.instructions}
+                {singleRecipe.instructions}
               </div>
             )}
 

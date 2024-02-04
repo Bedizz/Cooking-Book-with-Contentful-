@@ -8,14 +8,26 @@ import HomePage from "./Pages/HomePage";
 import Recipes from "./Pages/Recipes";
 import Footer from './Pages/Footer';
 import styles from './Pages/HomePage.module.css'; 
+import cors from 'cors';
 
 
 const App = () => {
-  const { recipes, getRecipes } = useContentful();
-  const { id } = useParams();
+const [data, setData] = useState([]);
+
+  const fetchRecipes = async()=> {
+    try {
+      const res = await fetch("http://localhost:8000/recipes");
+      const data = await res.json()
+      setData(data)
+      console.log(data)
+    } catch (error) {
+      
+    }
+  }
 
   useEffect(() => {
-    getRecipes();
+    // getRecipes();
+    fetchRecipes()
   }, []);
 
   return (
@@ -24,8 +36,8 @@ const App = () => {
       
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/recipes" element={<Recipes recipes={recipes} />} />
-        <Route path="/recipes/:id" element={<Recipe recipes={recipes} />} />
+        <Route path="/recipes" element={<Recipes data={data} />} />
+        <Route path="/recipes/:id" element={<Recipe data={data} />} />
       </Routes>
     </div>
   );

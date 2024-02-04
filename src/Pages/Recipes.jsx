@@ -4,7 +4,7 @@ import Footer from './Footer';
 import "./Recipes.css"
 import SearchBar from '../components/SearchBar';
 
-const Recipes = ({recipes}) => {
+const Recipes = ({data}) => {
 
   
 
@@ -14,14 +14,14 @@ const Recipes = ({recipes}) => {
         <SearchBar />
         
           <ul className='recipes-list'>
-              {recipes &&
-                recipes.map((recipe) => (
-                  <li className="recipe-item" key={recipe.sys.id} >
-                    <Link to={`/recipes/${recipe.sys.id}`} >
+              {data &&
+                data.map((recipe) => (
+                  <li className="recipe-item" key={recipe.id} >
+                    <Link to={`/recipes/${recipe.title}`} >
                   <div className='header-container'>
-                    <h3>{recipe.fields.title}</h3>
+                    <h3>{recipe.title}</h3>
                   </div>
-                  <img className="recipe-image" src={recipe.fields.image.fields.file.url} alt={recipe.fields.title} />
+                  <img className="recipe-image" src={recipe.image} alt={recipe.title} />
                   </Link>
                   </li>
                 ))}

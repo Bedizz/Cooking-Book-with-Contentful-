@@ -14,7 +14,7 @@ const NavBar = () => {
         </li>
         <li>
           <img
-            src="Recipe Images\cook-book-logo-3-removebg-preview.png"
+            src="/Recipe Images/cook-book-logo-3-removebg-preview.png"
             alt="cook-book"
           />
         </li>
