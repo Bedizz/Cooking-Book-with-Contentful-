@@ -11,7 +11,7 @@ const Recipes = ({data}) => {
     return (
       <div className='recipe-container'>
         <h2>List of Recipes</h2>
-        <SearchBar />
+        {/* <SearchBar /> */}
         
           <ul className='recipes-list'>
               {data &&
