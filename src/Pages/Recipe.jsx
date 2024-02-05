@@ -6,9 +6,8 @@ import Footer from "./Footer";
 const Recipe = ({ data }) => {
   const { id } = useParams();
   // const singleRecipe = data.find((recipe) => recipe.id === id);
+  
   const singleRecipe = data.find((recipe) => {
-    console.log(recipe.id)
-    console.log("id", id)
     return recipe.title === id
   });
 
@@ -52,9 +51,8 @@ const Recipe = ({ data }) => {
             </div>
             {showIngredients && (
               <div className={styles.ingredients}>
-                {singleRecipe.ingredients.map((ingredient, index) => (
-                  <p key={index}>{ingredient}</p>
-                ))}
+                <div>{singleRecipe.ingredients}</div>
+              
               </div>
             )}
             <div
